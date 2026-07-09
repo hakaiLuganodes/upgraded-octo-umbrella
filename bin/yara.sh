@@ -13,12 +13,12 @@
 # Extra arguments
 read INPUT_JSON
 YARA_PATH="/usr/bin"
-YARA_RULES="/var/ossec/active-response/rules/yara_rules.yar"
-YARA_GIT="/var/ossec/active-response"
+YARA_RULES="/var/ossec/yara-ruleset/rules/yara_rules.yar"
+YARA_GIT="/var/ossec/yara-ruleset"
 FILENAME=$(echo $INPUT_JSON | jq -r .parameters.alert.syscheck.path)
 
 # Set LOG_FILE path
-LOG_FILE="logs/active-responses.log"
+LOG_FILE="/var/ossec/logs/active-responses.log"
 
 size=0
 actual_size=$(stat -c %s ${FILENAME})
